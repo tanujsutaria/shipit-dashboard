@@ -16,7 +16,7 @@ def get_orders():
             'order_status' : order.order_status,
             'order_created_date' : order.order_created_date,
             'order_finished_date' : order.order_finished_date,
-            'order_target_finish_date' : order. order_target_finish_date,
+            'order_target_finish_date' : order.order_target_finish_date,
             'order_late_comment' : order.order_late_comment
         })
     return jsonify({'Orders':orders})
