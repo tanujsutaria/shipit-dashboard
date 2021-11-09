@@ -1,6 +1,7 @@
 from flask import Blueprint,jsonify,request
 from . import db
 from .models import Order
+from flask_socketio import socketio
 
 main = Blueprint('main', __name__)
 
@@ -53,6 +54,7 @@ def update_order():
                 order_late_comment = order_data['order_late_comment']
                 ))
         db.session.commit()
+        emit('updateResponse', {'data': order})
         return 'Done', 201
     else:
         return "Please POST request with pk"
