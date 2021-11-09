@@ -3,8 +3,11 @@ import React, {useEffect} from 'react';
 
 function App() {
   useEffect(() => {
-    fetch("/orders")
-  })
+    fetch("/orders").then(response =>
+      response.json().then(data => {
+        console.log(data)
+      }));
+  },[]);
   return (
     <div className="App">
     </div>
