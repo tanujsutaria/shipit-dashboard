@@ -14,7 +14,7 @@ export const Orders = ({orders}) => {
          {orders.map(order => {
              return(
                      <Table.Body>
-                         <Table.Row key = {order.ordr_pk}>
+                         <Table.Row key = {order.pk}>
                              <Table.Cell>{order.ordr_barCode}</Table.Cell>
                              <Table.Cell>{order.stts_name}</Table.Cell>
                              <Table.Cell>{order.ordr_createdBy}</Table.Cell>
