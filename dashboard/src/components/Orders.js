@@ -6,18 +6,18 @@ export const Orders = ({orders}) => {
      <Table>
          <Table.Header>
             <Table.Row>
-            <Table.HeaderCell>Order Number</Table.HeaderCell>
+            <Table.HeaderCell>Order Barcode</Table.HeaderCell>
             <Table.HeaderCell>Order Status</Table.HeaderCell>
-            <Table.HeaderCell>Created On</Table.HeaderCell>
+            <Table.HeaderCell>Created By</Table.HeaderCell>
             </Table.Row>
         </Table.Header>
          {orders.map(order => {
              return(
                      <Table.Body>
-                         <Table.Row>
-                             <Table.Cell>{order.order_number}</Table.Cell>
-                             <Table.Cell>{order.order_status}</Table.Cell>
-                             <Table.Cell>{order.order_created_date}</Table.Cell>
+                         <Table.Row key = {order.ordr_pk}>
+                             <Table.Cell>{order.ordr_barCode}</Table.Cell>
+                             <Table.Cell>{order.stts_name}</Table.Cell>
+                             <Table.Cell>{order.ordr_createdBy}</Table.Cell>
                          </Table.Row>
                      </Table.Body>
              )

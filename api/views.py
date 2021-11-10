@@ -43,18 +43,19 @@ def add_order():
 def update_order():
     """POST request connected to webhook that automatically update the order in the database"""
     order_data = request.get_json()
-    if(order_data['pk']):
-        order = Order.query.filter_by(pk=order_data['pk'])
-        order.update(dict(
-                order_number = order_data['order_number'],
-                order_status = order_data['order_status'],
-                order_created_date = order_data['order_created_date'],
-                order_finished_date = order_data['order_finished_date'],
-                order_target_finish_date = order_data['order_target_finish_date'],
-                order_late_comment = order_data['order_late_comment']
-                ))
-        db.session.commit()
-        emit('updateResponse', {'data': order})
-        return 'Done', 201
-    else:
-        return "Please POST request with pk"
+    # if(order_data['pk']):
+    #     order = Order.query.filter_by(pk=order_data['pk'])
+    #     order.update(dict(
+    #             order_number = order_data['order_number'],
+    #             order_status = order_data['order_status'],
+    #             order_created_date = order_data['order_created_date'],
+    #             order_finished_date = order_data['order_finished_date'],
+    #             order_target_finish_date = order_data['order_target_finish_date'],
+    #             order_late_comment = order_data['order_late_comment']
+    #             ))
+    #     db.session.commit()
+    #     return 'Done', 201
+    # else:
+    #     return "Please POST request with pk"
+    print(order_data)
+    return order_data

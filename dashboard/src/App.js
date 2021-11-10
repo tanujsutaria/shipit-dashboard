@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 import { Orders } from './components/Orders';
 import { Container } from 'semantic-ui-react';
 
-
 function App() {
   const [orders, setOrders] = useState([]);
 
