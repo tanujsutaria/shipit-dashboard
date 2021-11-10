@@ -39,7 +39,7 @@ def update_order():
     order_data = request.get_json()
     if(order_data['pk']):
         order = Order.query.filter_by(ordr_pk=order_data['pk'])
-        if(order.get('ordr_pk')):
+        if(order):
             order.update(dict(
                 ordr_barCode = order_data['columns']['ordr_barCode']['value'],
                 stts_name = order_data['columns']['stts_name']['value'],
